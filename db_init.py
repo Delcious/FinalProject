@@ -12,9 +12,6 @@ curr.execute("""
              """
              )
 
-
-
-
 curr.execute(
     """
     CREATE TABLE items (
@@ -24,7 +21,6 @@ curr.execute(
     );
 """
 )
-
 
 curr.execute(
     """
@@ -37,7 +33,6 @@ FOREIGN KEY(cust_id) REFERENCES customers(id)
 );
 """
 )
-
 
 curr.execute(
     """
@@ -82,7 +77,6 @@ for order in order_list:
         item_id = curr.fetchone()[0]
         curr.execute("INSERT INTO order_list (order_id, item_id) VALUES (?, ?);", 
                      (order_id, item_id))
-
 
 conn.commit()
 conn.close()
